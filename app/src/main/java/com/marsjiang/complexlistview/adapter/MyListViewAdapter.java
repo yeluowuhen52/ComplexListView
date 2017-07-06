@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.marsjiang.complexlistview.R;
 import com.marsjiang.complexlistview.model.User;
+import com.marsjiang.complexlistview.util.CommonUtil;
 
 import java.util.List;
 
@@ -83,9 +84,9 @@ public class MyListViewAdapter extends BaseAdapter {
             return TYPE1;
         } else if (u.getItem2_str() != null) {
             return TYPE2;
-        } else if(u.getItem3_str() != null){//如果前两个字段都为空，那就一定是加载第三个布局啦。
+        } else if (u.getItem3_str() != null) {//如果前两个字段都为空，那就一定是加载第三个布局啦。
             return TYPE3;
-        }else{
+        } else {
             return TYPE4;
         }
     }
@@ -173,12 +174,14 @@ public class MyListViewAdapter extends BaseAdapter {
         ImageView iv_test = null;
         for (int i = 0; i < 10; i++) {
             View view = LayoutInflater.from(ctx).inflate(R.layout.scroll_item_layout, null);
+            int screenWidth = CommonUtil.getScreenWidth(ctx);
+            int screenHeight = CommonUtil.getScreenHeight(ctx);
+            view.setLayoutParams(new LinearLayout.LayoutParams(screenWidth / 2, 120));
             rl_layout = (LinearLayout) view.findViewById(R.id.rl_layout);
             tv_title = (TextView) view.findViewById(R.id.tv_title);
             tv_sub_title = (TextView) view.findViewById(R.id.tv_sub_title);
             tv_sub_title = (TextView) view.findViewById(R.id.tv_sub_title);
             iv_test = (ImageView) view.findViewById(R.id.iv_test);
-
 
             tv_title.setText("主标题" + i);
             tv_sub_title.setText("子标题" + i);
