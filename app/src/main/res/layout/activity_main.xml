@@ -6,15 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.marsjiang.complexlistview.MainActivity">
-
-    <ListView
-        android:id="@+id/listview"
+    <!--自定义View实现SwipeRefreshLayout，添加上拉加载更多的功能-->
+    <com.marsjiang.complexlistview.view.MySwipeRefreshView
+        android:id="@+id/myswiperefreshview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="match_parent">
 
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </com.marsjiang.complexlistview.view.MySwipeRefreshView>
 </android.support.constraint.ConstraintLayout>
