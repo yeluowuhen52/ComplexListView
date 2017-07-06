@@ -85,7 +85,6 @@ public class MainActivity extends FragmentActivity {
                         // 这里要放在里面刷新，放在外面会导致刷新的进度条卡住
                         adapter.notifyDataSetChanged();
                         Toast.makeText(MainActivity.this, "加载了" + 1 + "条数据", Toast.LENGTH_SHORT).show();
-
                         // 加载完数据设置为不加载状态，将加载进度收起来
                         swipeRefreshView.setLoading(false);
                     }
