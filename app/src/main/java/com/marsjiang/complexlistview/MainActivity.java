@@ -64,15 +64,11 @@ public class MainActivity extends FragmentActivity {
                     }
                 }, 1200);
 
-                // System.out.println(Thread.currentThread().getName());
-
-                // 这个不能写在外边，不然会直接收起来
-                //swipeRefreshLayout.setRefreshing(false);
             }
         });
 
 
-        // 设置下拉加载更多
+        // 设置上拉加载更多
         swipeRefreshView.setOnLoadListener(new MySwipeRefreshView.OnLoadListener() {
             @Override
             public void onLoad() {
